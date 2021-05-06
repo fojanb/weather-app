@@ -3,10 +3,11 @@ import React, { useState } from "react";
 
 function App() {
   const api_key = "4b3e61d509a14cd79c90d406e79d5d1a";
-  const base_api_url = "https://api.openweathermap.org/data/2.5/";
+  // const base_api_url = "https://api.openweathermap.org/data/2.5/";
 
   // **********************************************************
   const [form, setForm] = useState({ city: "", country: "" });
+  const [weather, setWeather] = useState([]);
   // **********************************************************
 
   const inputHandler = (e) => {
@@ -14,13 +15,13 @@ function App() {
     let value = e.target.value;
 
     if (name === "city") {
-      setForm({ ...form,city: value });
+      setForm({ ...form, city: value });
     }
 
     if (name === "country") {
-      setForm({ ...form,country: value });
+      setForm({ ...form, country: value });
     }
-    console.log(form.city, form.country);
+    // console.log(form.city, form.country);
   };
   // -----API fetching-----
   async function weatherData(e) {
@@ -30,7 +31,11 @@ function App() {
     } else {
       const response = await fetch(
         `https://api.openweathermap.org/data/2.5/weather?q=${form.city},${form.country}&appid=${api_key}`
-      ).then(res => res.json()).then(data => console.log(data));
+      )
+        .then((res) => res.json())
+        .then((data) => console.log(data))
+        .then((data) => setWeather(data));
+        // All data goes to weather so far.
     }
   }
   // ***********************************************************
@@ -93,11 +98,11 @@ function App() {
         </form>
 
         <div className="location-box">
-          <div className="location">British Columbia , CA</div>
+          <div className="location">{form.city} , {form.country}</div>
           <div className="date">{dateBuilder(d)}</div>
         </div>
         <div className="weather-box">
-          <div className="temp">15°C</div>
+          <div className="temp">{}</div>
           <div className="weather">Sunny</div>
         </div>
       </main>

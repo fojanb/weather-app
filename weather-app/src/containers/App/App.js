@@ -2,7 +2,7 @@ import "./App.css";
 import React, { useState } from "react";
 
 function App() {
-  const api_key = "1ae970e002ad66eeac4083f4f94ac0c4";
+  const api_key = "4b3e61d509a14cd79c90d406e79d5d1a";
   const base_api_url = "https://api.openweathermap.org/data/2.5/";
 
   // **********************************************************
@@ -22,7 +22,7 @@ function App() {
     }
     // console.log(form.city, form.country);
   };
-
+  // -----API fetching-----
   async function weatherData(e) {
     e.preventDefault();
     if (form.city === "") {
@@ -31,8 +31,6 @@ function App() {
       const response = await fetch(
         `https://api.openweathermap.org/data/2.5/weather?q=${form.city},${form.country}&appid=${api_key}`
       ).then(data => console.log(data.json()));
-
-    
     }
   }
   // ***********************************************************

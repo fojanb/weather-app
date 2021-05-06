@@ -14,13 +14,13 @@ function App() {
     let value = e.target.value;
 
     if (name === "city") {
-      setForm({ city: value });
+      setForm({ ...form,city: value });
     }
 
     if (name === "country") {
-      setForm({ country: value });
+      setForm({ ...form,country: value });
     }
-    // console.log(form.city, form.country);
+    console.log(form.city, form.country);
   };
   // -----API fetching-----
   async function weatherData(e) {
@@ -30,7 +30,7 @@ function App() {
     } else {
       const response = await fetch(
         `https://api.openweathermap.org/data/2.5/weather?q=${form.city},${form.country}&appid=${api_key}`
-      ).then(data => console.log(data.json()));
+      ).then(res => res.json()).then(data => console.log(data));
     }
   }
   // ***********************************************************

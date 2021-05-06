@@ -1,10 +1,41 @@
 import "./App.css";
+import React, { useState } from "react";
 
-const api_key = {
-  api_key: "4b3e61d509a14cd79c90d406e79d5d1a",
-  base_api_url: "https://api.openweathermap.org/data/2.5/",
-};
 function App() {
+  const api_key = "1ae970e002ad66eeac4083f4f94ac0c4";
+  const base_api_url = "https://api.openweathermap.org/data/2.5/";
+
+  // **********************************************************
+  const [form, setForm] = useState({ city: "", country: "" });
+  // **********************************************************
+
+  const inputHandler = (e) => {
+    let name = e.target.name;
+    let value = e.target.value;
+
+    if (name === "city") {
+      setForm({ city: value });
+    }
+
+    if (name === "country") {
+      setForm({ country: value });
+    }
+    // console.log(form.city, form.country);
+  };
+
+  async function weatherData(e) {
+    e.preventDefault();
+    if (form.city === "") {
+      alert("Please insert valid date");
+    } else {
+      const response = await fetch(
+        `https://api.openweathermap.org/data/2.5/weather?q=${form.city},${form.country}&appid=${api_key}`
+      ).then(data => console.log(data.json()));
+
+    
+    }
+  }
+  // ***********************************************************
   let d = new Date();
   const dateBuilder = (d) => {
     let months = [
@@ -39,19 +70,30 @@ function App() {
   return (
     <div className="app">
       <main>
-        <div className="search-box">
-          <form>
-            <input
-              type="text"
-              onChange=""
-              className="search-bar"
-              placeholder="search..."
-            ></input>
-            {/* <button type="submit" onClick="" className="search-button">
-              serach
-            </button> */}
-          </form>
-        </div>
+        <form className="search-box">
+          <input
+            type="text"
+            onChange={(e) => inputHandler(e)}
+            className="search-bar"
+            placeholder="City..."
+            name="city"
+          ></input>
+          <input
+            type="text"
+            onChange={(e) => inputHandler(e)}
+            className="search-bar"
+            placeholder="Country..."
+            name="country"
+          ></input>
+          <button
+            type="submit"
+            onClick={(e) => weatherData(e)}
+            className="search-button"
+          >
+            serach
+          </button>
+        </form>
+
         <div className="location-box">
           <div className="location">British Columbia , CA</div>
           <div className="date">{dateBuilder(d)}</div>

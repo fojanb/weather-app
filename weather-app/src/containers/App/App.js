@@ -36,7 +36,7 @@ function App() {
       )
         .then((res) => res.json())
         .then((data) => console.log(data))
-        .then((data) => setWeather(data));
+        .then((data) => setWeather(data)).then(() => setForm(''));
         // now All data goes to weather so far.
     }
   }

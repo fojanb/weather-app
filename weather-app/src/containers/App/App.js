@@ -2,12 +2,14 @@ import "./App.css";
 import React, { useState } from "react";
 
 function App() {
-  const api_key = "4b3e61d509a14cd79c90d406e79d5d1a";
-  // const base_api_url = "https://api.openweathermap.org/data/2.5/";
-
+  const api = {
+    key : "4b3e61d509a14cd79c90d406e79d5d1a",
+    baseURL : "https://api.openweathermap.org/data/2.5/"
+  }
+  
   // **********************************************************
   const [form, setForm] = useState({ city: "", country: "" });
-  const [weather, setWeather] = useState([]);
+  const [weather, setWeather] = useState([]); //Array of objects(json)
   // **********************************************************
 
   const inputHandler = (e) => {
@@ -23,19 +25,19 @@ function App() {
     }
     // console.log(form.city, form.country);
   };
-  // -----API fetching-----
+  // -----this is API fetching and also event handler for serach button-----
   async function weatherData(e) {
     e.preventDefault();
     if (form.city === "") {
       alert("Please insert valid date");
     } else {
       const response = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${form.city},${form.country}&appid=${api_key}`
+        `${api.baseURL}weather?q=${form.city},${form.country}&appid=${api.key}`
       )
         .then((res) => res.json())
         .then((data) => console.log(data))
         .then((data) => setWeather(data));
-        // All data goes to weather so far.
+        // now All data goes to weather so far.
     }
   }
   // ***********************************************************
@@ -102,7 +104,7 @@ function App() {
           <div className="date">{dateBuilder(d)}</div>
         </div>
         <div className="weather-box">
-          <div className="temp">{}</div>
+          <div className="temp"></div>
           <div className="weather">Sunny</div>
         </div>
       </main>

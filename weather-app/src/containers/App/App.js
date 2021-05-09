@@ -21,7 +21,7 @@ function App() {
   async function weatherData(e) {
     e.preventDefault();
     if (form.city === "") {
-      alert("Please insert valid date");
+      alert("Please insert valid city name");
     } else {
       const response = await fetch(
         `${api.baseURL}weather?q=${form.city}&appid=${api.key}`

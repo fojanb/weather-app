@@ -1,4 +1,3 @@
-import "./App.css";
 import React, { useState } from "react";
 
 function App() {
@@ -79,7 +78,15 @@ function App() {
   // ------------------------------
 
   return (
-    <div className={(weather.weather) != undefined ? ((weather.weather.main.temp >289.15) ?'app warm':'app'):'app'}>
+    <div
+      className={
+        weather.weather != undefined
+          ? weather.weather.main.temp > 289.15
+            ? "app warm"
+            : "app"
+          : "app"
+      }
+    >
       <main>
         <form className="search-box">
           <input

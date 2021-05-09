@@ -69,13 +69,17 @@ function App() {
     let year = d.getFullYear();
     return `${day} ${date} ${month} ${year} `;
   };
+  // ------------------------------
   const kelvinToCelsius = () => {
     let kelvin = weather.weather.main.temp;
     let celsius = Math.round(kelvin - 273.15);
     return celsius;
   };
+
+  // ------------------------------
+
   return (
-    <div className="app">
+    <div className={(weather.weather) != undefined ? ((weather.weather.main.temp >289.15) ?'app warm':'app'):'app'}>
       <main>
         <form className="search-box">
           <input
@@ -93,6 +97,7 @@ function App() {
             <img src="https://img.icons8.com/ios-filled/50/ffffff/detective.png" />{" "}
           </button>
         </form>
+        {/* *** */}
         {weather.weather != undefined ? (
           <div>
             <div className="location-box">
@@ -109,6 +114,7 @@ function App() {
             </div>
           </div>
         ) : null}
+        {/* *** */}
       </main>
     </div>
   );

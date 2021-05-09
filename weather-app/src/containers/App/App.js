@@ -11,7 +11,7 @@ function App() {
   const [form, setForm] = useState({ city: "" });
   const [weather, setWeather] = useState([]); //Array of objects(json) or JSON array
   // **********************************************************
-
+  // *********************Event handlers***********************
   // -----this is API fetching and also event handler for serach button-----
   async function weatherData(e) {
     e.preventDefault();
@@ -24,12 +24,12 @@ function App() {
         .then((res) => res.json())
         .then((data) => data);
       // console.log(data);
-      setWeather({ data: data });
+      setWeather({ weather: data });
 
       // now All data goes to 'weather' so far.
     }
   }
-  // ***********************************************************
+
   const inputHandler = (e) => {
     let value = e.target.value;
     setForm({ city: value });
@@ -37,7 +37,7 @@ function App() {
     // console.log(form.city);
   };
   // ***********************************************************
-
+  // ***************none event handlers functions***************
   let d = new Date();
   const dateBuilder = (d) => {
     let months = [
@@ -69,6 +69,11 @@ function App() {
     let year = d.getFullYear();
     return `${day} ${date} ${month} ${year} `;
   };
+  const kelvinToCelsius = () => {
+    let kelvin = weather.weather.main.temp;
+    let celsius = Math.round(kelvin - 273.15);
+    return celsius;
+  };
   return (
     <div className="app">
       <main>
@@ -88,17 +93,22 @@ function App() {
             <img src="https://img.icons8.com/ios-filled/50/ffffff/detective.png" />{" "}
           </button>
         </form>
-        {weather.data != undefined ? (
+        {weather.weather != undefined ? (
           <div>
             <div className="location-box">
-              <div className="location">{weather.data.name},{weather.data.sys.country}</div>
+              <div className="location">
+                {weather.weather.name} , {weather.weather.sys.country}
+              </div>
               <div className="date">{dateBuilder(d)}</div>
             </div>
             <div className="weather-box">
-              <div className="temp"></div>
-              <div className="weather">Sunny</div>
+              <div className="temp">{kelvinToCelsius()}°C</div>
+              <div className="weather">
+                {weather.weather.weather[0].description}
+              </div>
             </div>
-          </div>) : null}
+          </div>
+        ) : null}
       </main>
     </div>
   );

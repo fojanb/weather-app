@@ -1,3 +1,4 @@
+
 * {
   margin: 0;
   padding: 0;
@@ -24,13 +25,31 @@ main {
 .search-box {
   width: 100%;
   margin: 0 auto 75px;
+  text-align: center;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
+  
 }
+.search-box > button{
+  margin-top: 20px;
+  background: none;
+  appearance: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: white;
+  font-size: 20px;
+  opacity: 0.5;
+}
+.search-box > button:hover{
+  opacity: 1;
+
+}
+
 .search-box .search-bar {
-  width: 30%;
+  width: 100%;
   display: block;
   background: none;
   appearance: none;

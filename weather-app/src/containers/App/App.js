@@ -76,8 +76,8 @@ function App() {
   };
 
   // ------------------------------
-
   return (
+    // Dynamic CSS
     <div
       className={
         weather.weather != undefined

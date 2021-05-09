@@ -11,29 +11,33 @@ function App() {
   const [form, setForm] = useState({ city: "" });
   const [weather, setWeather] = useState([]); //Array of objects(json) or JSON array
   // **********************************************************
+
+  // -----this is API fetching and also event handler for serach button-----
+  async function weatherData(e) {
+    e.preventDefault();
+    if (form.city === "") {
+      alert("Please insert valid data");
+    } else {
+      const data = await fetch(
+        `${api.baseURL}weather?q=${form.city}&appid=${api.key}`
+      )
+        .then((res) => res.json())
+        .then((data) => data);
+      // console.log(data);
+      setWeather({ data: data });
+
+      // now All data goes to 'weather' so far.
+    }
+  }
+  // ***********************************************************
   const inputHandler = (e) => {
     let value = e.target.value;
     setForm({ city: value });
 
     // console.log(form.city);
   };
-  // -----this is API fetching and also event handler for serach button-----
-  async function weatherData(e) {
-    e.preventDefault();
-    if (form.city === "") {
-      alert("Please insert valid city name");
-    } else {
-      const response = await fetch(
-        `${api.baseURL}weather?q=${form.city}&appid=${api.key}`
-      )
-        .then((res) => res.json())
-        .then((data) => console.log(data))
-        .then((data) => setWeather(data));
-      // now All data goes to weather so far.
-    }
-  }
-
   // ***********************************************************
+
   let d = new Date();
   const dateBuilder = (d) => {
     let months = [
@@ -84,16 +88,17 @@ function App() {
             <img src="https://img.icons8.com/ios-filled/50/ffffff/detective.png" />{" "}
           </button>
         </form>
-        <div>
-          <div className="location-box">
-            <div className="location">{form.city}</div>
-            <div className="date">{dateBuilder(d)}</div>
-          </div>
-          <div className="weather-box">
-            <div className="temp"></div>
-            <div className="weather">Sunny</div>
-          </div>
-        </div>
+        {weather.data != undefined ? (
+          <div>
+            <div className="location-box">
+              <div className="location">{weather.data.name},{weather.data.sys.country}</div>
+              <div className="date">{dateBuilder(d)}</div>
+            </div>
+            <div className="weather-box">
+              <div className="temp"></div>
+              <div className="weather">Sunny</div>
+            </div>
+          </div>) : null}
       </main>
     </div>
   );

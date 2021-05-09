@@ -14,7 +14,6 @@ body {
 }
 .app.warm {
   background-image: url("./assets/warm.jpg");
-
 }
 main {
   min-height: 100vh;
@@ -43,11 +42,10 @@ main {
   cursor: pointer;
   color: white;
   font-size: 20px;
-  opacity: 0.5;
 }
-.search-box > button:hover {
-  opacity: 1;
-}
+/* .search-box > button:hover {
+  transition: cubic-bezier(1, 0, 0, 1);
+} */
 
 .search-box .search-bar {
   width: 100%;

@@ -10,7 +10,7 @@ body {
   background-image: url("./assets/cold.jpg");
   background-size: cover;
   background-position: bottom;
-  transition: 0.8s ease-out;
+  transition: 1s ease-out;
 }
 .app.warm {
   background-image: url("./assets/warm.jpg");

@@ -80,7 +80,7 @@ function App() {
     // Dynamic CSS
     <div
       className={
-        weather.weather != undefined
+        weather.weather !== undefined
           ? weather.weather.main.temp > 289.15
             ? "app warm"
             : "app"
@@ -101,11 +101,14 @@ function App() {
             onClick={(e) => weatherData(e)}
             className="search-button"
           >
-            <img src="https://img.icons8.com/ios-filled/50/ffffff/detective.png" />{" "}
+            <img
+              src="https://img.icons8.com/ios-filled/50/ffffff/detective.png"
+              alt="searchButton"
+            />{" "}
           </button>
         </form>
         {/* *** */}
-        {weather.weather != undefined ? (
+        {weather.weather !== undefined ? (
           <div>
             <div className="location-box">
               <div className="location">

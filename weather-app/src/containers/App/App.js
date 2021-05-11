@@ -12,7 +12,7 @@ function App() {
   // **********************************************************
   // *********************Event handlers***********************
   // -----this is API fetching and also event handler for serach button-----
-  async function weatherData(e) {
+  const weatherData = async (e) => {
     e.preventDefault();
     if (form.city === "") {
       alert("Please insert valid data");
@@ -98,7 +98,7 @@ function App() {
           ></input>
           <button
             type="submit"
-            onClick={(e) => weatherData(e)}
+            onClick={weatherData}
             className="search-button"
           >
             <img

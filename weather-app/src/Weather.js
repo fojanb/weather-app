@@ -13,7 +13,6 @@ function Weather() {
   // *************************<States>*************************
   const [form, setForm] = useState({ city: "" });
   const [weather, setWeather] = useState([]); //Array of objects(json) or JSON array
-  const [search, setSearch] = useState("");
   // **********************************************************
   // *********************Event handlers***********************
   // -----this is API fetching and also event's handler for serach button-----
@@ -30,7 +29,8 @@ function Weather() {
       // console.log(data);
       setWeather({ weather: data });
       // now All data goes to 'weather' so far.
-      setSearch("");
+      setForm({ city: "" });
+      
     }
   };
 
@@ -102,8 +102,7 @@ function Weather() {
             className="search-bar"
             placeholder="City..."
             name="city"
-            value={search}
-            autoComplete="on"
+            value={form.city}
             onInvalid="alert('Invalid city name!');"
             required
           ></input>

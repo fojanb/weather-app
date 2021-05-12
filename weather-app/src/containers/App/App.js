@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Weather from "../components/Weather/Weather";
+
 
 function App() {
   const api = {
@@ -126,6 +128,7 @@ function App() {
         ) : null}
         {/* *** */}
       </main>
+      <Weather/>
     </div>
   );
 }

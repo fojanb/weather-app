@@ -102,6 +102,7 @@ function Weather() {
             placeholder="City..."
             name="city"
             value={form.city}
+            autoComplete="off"
             onInvalid="alert('Invalid city name!');"
             required
           ></input>

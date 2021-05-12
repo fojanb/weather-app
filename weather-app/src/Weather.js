@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Main from "./Main";
 import Clouds from "./Clouds";
 import Wind from "./Wind";
-import Dt from "./Dt"
+import Dt from "./Dt";
 
 function Weather() {
   const api = {
@@ -10,7 +10,7 @@ function Weather() {
     baseURL: "https://api.openweathermap.org/data/2.5/",
   };
 
-  // **********************************************************
+  // *************************<States>*************************
   const [form, setForm] = useState({ city: "" });
   const [weather, setWeather] = useState([]); //Array of objects(json) or JSON array
   // **********************************************************
@@ -18,7 +18,7 @@ function Weather() {
   // -----this is API fetching and also event handler for serach button-----
   const weatherData = async (e) => {
     e.preventDefault();
-    if (form.city === "") {
+    if (form.city === "" || form.city === undefined) {
       alert("Please insert valid data");
     } else {
       const data = await fetch(
@@ -95,10 +95,12 @@ function Weather() {
         <form className="search-box">
           <input
             type="text"
+            size="10"
             onChange={(e) => inputHandler(e)}
             className="search-bar"
             placeholder="City..."
             name="city"
+            autoComplete="on"
           ></input>
           <button type="submit" onClick={weatherData} className="search-button">
             <img
@@ -129,7 +131,7 @@ function Weather() {
             />
             <Clouds weatherClouds={weather.weather.clouds} />
             <Wind weatherWind={weather.weather.wind} />
-            <Dt weatherDt={weather.weather.dt}/>
+            <Dt weatherDt={weather.weather.dt} />
           </div>
         ) : null}
         {/* *** */}

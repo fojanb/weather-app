@@ -79,7 +79,6 @@ function Weather() {
     let celsius = Math.round(kelvin - 273.15);
     return celsius;
   };
-
   // ------------------------------
   return (
     // Dynamic CSS

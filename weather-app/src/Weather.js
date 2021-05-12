@@ -28,7 +28,6 @@ function Weather() {
         .then((data) => data);
       // console.log(data);
       setWeather({ weather: data });
-
       // now All data goes to 'weather' so far.
     }
   };

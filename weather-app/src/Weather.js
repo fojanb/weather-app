@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import Weather from "../components/Weather/Weather";
+import Main from "./Main";
 
-
-function App() {
+function Weather() {
   const api = {
     key: "4b3e61d509a14cd79c90d406e79d5d1a",
     baseURL: "https://api.openweathermap.org/data/2.5/",
@@ -29,7 +28,7 @@ function App() {
 
       // now All data goes to 'weather' so far.
     }
-  }
+  };
 
   const inputHandler = (e) => {
     let value = e.target.value;
@@ -98,11 +97,7 @@ function App() {
             placeholder="City..."
             name="city"
           ></input>
-          <button
-            type="submit"
-            onClick={weatherData}
-            className="search-button"
-          >
+          <button type="submit" onClick={weatherData} className="search-button">
             <img
               src="https://img.icons8.com/ios-filled/50/ffffff/detective.png"
               alt="searchButton"
@@ -124,13 +119,13 @@ function App() {
                 {weather.weather.weather[0].description}
               </div>
             </div>
+            <Main weatherMain={weather.weather.main} convertorKtoC={kelvinToCelsius}/>
           </div>
         ) : null}
         {/* *** */}
       </main>
-      <Weather/>
     </div>
   );
 }
 
-export default App;
+export default Weather;

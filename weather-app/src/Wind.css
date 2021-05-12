@@ -1,9 +1,9 @@
-.weatherMain-box {
+.weatherWind-box {
     text-align: center;
     font-family: "Montserrat", sans-serif;
 
   }
-  .weatherMain-box .main {
+  .weatherWind-box .wind {
     position: relative;
     display: inline-block;
     margin: 30px auto;

@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import Main from "./Main";
+import Clouds from "./Clouds";
+import Wind from "./Wind";
+import Dt from "./Dt"
 
 function Weather() {
   const api = {
@@ -106,7 +109,7 @@ function Weather() {
         </form>
         {/* *** */}
         {weather.weather !== undefined ? (
-          <div>
+          <div className="display">
             <div className="location-box">
               <div className="location">
                 {weather.weather.name} , {weather.weather.sys.country}
@@ -119,7 +122,14 @@ function Weather() {
                 {weather.weather.weather[0].description}
               </div>
             </div>
-            <Main weatherMain={weather.weather.main} convertorKtoC={kelvinToCelsius}/>
+            {/* My Components : */}
+            <Main
+              weatherMain={weather.weather.main}
+              convertKtoC={kelvinToCelsius}
+            />
+            <Clouds weatherClouds={weather.weather.clouds} />
+            <Wind weatherWind={weather.weather.wind} />
+            <Dt weatherDt={weather.weather.dt}/>
           </div>
         ) : null}
         {/* *** */}

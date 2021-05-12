@@ -1,9 +1,9 @@
-.weatherMain-box {
+.weatherClouds-box {
     text-align: center;
     font-family: "Montserrat", sans-serif;
 
   }
-  .weatherMain-box .main {
+  .weatherClouds-box .clouds {
     position: relative;
     display: inline-block;
     margin: 30px auto;

@@ -13,12 +13,13 @@ function Weather() {
   // *************************<States>*************************
   const [form, setForm] = useState({ city: "" });
   const [weather, setWeather] = useState([]); //Array of objects(json) or JSON array
+  const [search, setSearch] = useState("");
   // **********************************************************
   // *********************Event handlers***********************
-  // -----this is API fetching and also event handler for serach button-----
+  // -----this is API fetching and also event's handler for serach button-----
   const weatherData = async (e) => {
     e.preventDefault();
-    if (form.city === "" || form.city === undefined) {
+    if (form.city === "") {
       alert("Please insert valid data");
     } else {
       const data = await fetch(
@@ -29,6 +30,7 @@ function Weather() {
       // console.log(data);
       setWeather({ weather: data });
       // now All data goes to 'weather' so far.
+      setSearch("");
     }
   };
 
@@ -38,6 +40,7 @@ function Weather() {
 
     // console.log(form.city);
   };
+
   // ***********************************************************
   // ***************none event handlers functions***************
   let d = new Date();
@@ -99,13 +102,16 @@ function Weather() {
             className="search-bar"
             placeholder="City..."
             name="city"
+            value={search}
             autoComplete="on"
+            onInvalid="alert('Invalid city name!');"
+            required
           ></input>
-          <button type="submit" onClick={weatherData} className="search-button">
+          <button type="reset" onClick={weatherData} className="search-button">
             <img
               src="https://img.icons8.com/ios-filled/50/ffffff/detective.png"
               alt="searchButton"
-            />{" "}
+            />
           </button>
         </form>
         {/* *** */}

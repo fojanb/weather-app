@@ -30,7 +30,6 @@ function Weather() {
       setWeather({ weather: data });
       // now All data goes to 'weather' so far.
       setForm({ city: "" });
-      
     }
   };
 

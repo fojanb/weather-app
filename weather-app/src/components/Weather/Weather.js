@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import Main from "./Main";
-import Clouds from "./Clouds";
-import Wind from "./Wind";
-import Dt from "./Dt";
+import Main from "./../Main/Main";
+import Clouds from "./../Clouds/Clouds";
+import Wind from "./../Wind/Wind";
+import Dt from "./../Dt/Dt";
 
 function Weather() {
   const api = {

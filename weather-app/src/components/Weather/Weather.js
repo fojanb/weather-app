@@ -22,6 +22,7 @@ function Weather() {
       alert("Please insert valid data");
     } else {
       const data = await fetch(
+        // API Call :
         `${api.baseURL}weather?q=${form.city}&appid=${api.key}`
       )
         .then((res) => res.json())

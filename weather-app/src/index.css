@@ -103,9 +103,7 @@ main {
   font-size: 20px;
   padding: 5px;
 }
-.temp > sub {
-  padding: 10px;
-}
+
 .weather-box .weather {
   color: white;
   font-size: 15px;

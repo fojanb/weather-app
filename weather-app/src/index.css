@@ -103,6 +103,24 @@ main {
   font-size: 20px;
   padding: 5px;
 }
+.temp > button {
+  border:none;
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  text-align: center;
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.3);
+  color: white;
+  font-weight: 900;
+
+}
+.temp > button:hover{
+  background-color: rgb(231, 227, 227);
+  color: rgb(163, 163, 163);
+  cursor: pointer;
+  
+}
 
 .weather-box .weather {
   color: white;

@@ -10,7 +10,6 @@ function Weather() {
     key: "4b3e61d509a14cd79c90d406e79d5d1a",
     baseURL: "https://api.openweathermap.org/data/2.5/",
   };
-
   // *************************<States>*************************
   const [form, setForm] = useState({ city: "" });
   const [weather, setWeather] = useState([]); //Array of objects(json) or JSON array
@@ -35,22 +34,20 @@ function Weather() {
       setForm({ city: "" });
     }
   };
-
   const inputHandler = (e) => {
     let value = e.target.value;
     setForm({ city: value });
 
     // console.log(form.city);
   };
-
-  const celsiusToFahrenheit = (e) => {
+  const celsiusToFahrenheit = () => {
     setDegree("F");
     let kelvin = weather.weather.main.temp;
     let celsius = Math.floor(kelvin - 273.15);
-    const Fhr = document.querySelector(".temp");
-    Fhr.innerHTML = celsius * 1.8 + 32;
+    const Fhr = document.querySelector(".degree");
+    Fhr.innerHTML = Math.round(celsius * 1.8 + 32);
+   
   };
-
   // ***********************************************************
   // ***************none event handlers functions***************
   let d = new Date();
@@ -137,11 +134,9 @@ function Weather() {
             </div>
             <div className="weather-box">
               <div className="temp">
-                {kelvinToCelsius()}
+                <span className = "degree">{kelvinToCelsius()}</span>
                 <sup>o</sup>
-                <button onClick={(e) => celsiusToFahrenheit(e)}>
-                  {degree}
-                </button>
+                <button onClick={celsiusToFahrenheit}>{degree}</button>
                 <div className="weather">{weather.weather.weather[0].main}</div>
               </div>
             </div>
@@ -161,5 +156,4 @@ function Weather() {
     </div>
   );
 }
-
 export default Weather;

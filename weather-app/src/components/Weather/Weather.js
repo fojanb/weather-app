@@ -130,8 +130,8 @@ function Weather() {
             <div className="weather-box">
               <div className="temp">
                 {kelvinToCelsius()}
-                <sup>o</sup>
-                <div className="weather">{weather.weather.weather[0].main}</div>
+                <sup>o</sup><span>C</span>
+                <sub className="weather">{weather.weather.weather[0].main}</sub>
               </div>
             </div>
             {/* My Components : */}

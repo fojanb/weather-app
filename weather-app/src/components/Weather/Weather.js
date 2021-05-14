@@ -14,6 +14,7 @@ function Weather() {
   // *************************<States>*************************
   const [form, setForm] = useState({ city: "" });
   const [weather, setWeather] = useState([]); //Array of objects(json) or JSON array
+  const [degree, setDegree] = useState("C"); // Default degree is Celsius.
   // **********************************************************
   // *********************Event handlers***********************
   // -----this is API fetching and also event's handler for serach button-----
@@ -40,6 +41,14 @@ function Weather() {
     setForm({ city: value });
 
     // console.log(form.city);
+  };
+
+  const celsiusToFahrenheit = (e) => {
+    setDegree("F");
+    let kelvin = weather.weather.main.temp;
+    let celsius = Math.floor(kelvin - 273.15);
+    const Fhr = document.querySelector(".temp");
+    Fhr.innerHTML = celsius * 1.8 + 32;
   };
 
   // ***********************************************************
@@ -78,7 +87,7 @@ function Weather() {
   // ------------------------------
   const kelvinToCelsius = () => {
     let kelvin = weather.weather.main.temp;
-    let celsius = Math.round(kelvin - 273.15);
+    let celsius = Math.floor(kelvin - 273.15);
     return celsius;
   };
   // ------------------------------
@@ -119,18 +128,20 @@ function Weather() {
           <div className="display">
             <div className="location-box">
               <div className="location">
-                {weather.weather.name} , {weather.weather.sys.country}
+                {weather.weather.name}, {weather.weather.sys.country}
               </div>
               <div className="dateAndLocalTime">
                 <div>{dateBuilder(d)}</div>
-                {/* <div>{new Date().toLocaleDateString()}</div> */}
-                <div>{new Date().toLocaleTimeString()}</div>
+                {/* OR use this :<div>{new Date().toLocaleDateString()}</div> */}
               </div>
             </div>
             <div className="weather-box">
               <div className="temp">
                 {kelvinToCelsius()}
-                <sup>o</sup><span>C</span>
+                <sup>o</sup>
+                <button onClick={(e) => celsiusToFahrenheit(e)}>
+                  {degree}
+                </button>
                 <div className="weather">{weather.weather.weather[0].main}</div>
               </div>
             </div>

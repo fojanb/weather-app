@@ -74,7 +74,7 @@ main {
   text-align: center;
   text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
 }
-.location-box .date {
+.location-box .dateAndLocalTime {
   color: white;
   font-weight: 300;
   font-size: 15px;
@@ -82,6 +82,7 @@ main {
   text-shadow: 2px 2px rgba(50, 50, 70, 0.5);
   font-style: italic;
 }
+
 .weather-box {
   text-align: center;
 }
@@ -93,14 +94,14 @@ main {
   border-radius: 16px;
   padding: 15px 25px;
   color: white;
-  font-size: 50px;
+  font-size: 40px;
   font-weight: 900;
   text-align: center;
   box-shadow: 3px 6px rgba(0, 0, 0, 0.2);
 }
 .weather-box .weather {
   color: white;
-  font-size: 30px;
+  font-size: 15px;
   font-weight: 700;
 }
 .display {

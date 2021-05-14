@@ -3,6 +3,7 @@ import Main from "./../Main/Main";
 import Clouds from "./../Clouds/Clouds";
 import Wind from "./../Wind/Wind";
 import Dt from "./../Dt/Dt";
+import Sys from "./../Sys/Sys";
 
 function Weather() {
   const api = {
@@ -120,12 +121,17 @@ function Weather() {
               <div className="location">
                 {weather.weather.name} , {weather.weather.sys.country}
               </div>
-              <div className="date">{dateBuilder(d)}</div>
+              <div className="dateAndLocalTime">
+                <div>{dateBuilder(d)}</div>
+                {/* <div>{new Date().toLocaleDateString()}</div> */}
+                <div>{new Date().toLocaleTimeString()}</div>
+              </div>
             </div>
             <div className="weather-box">
-              <div className="temp">{kelvinToCelsius()}°C</div>
-              <div className="weather">
-                {weather.weather.weather[0].description}
+              <div className="temp">
+                {kelvinToCelsius()}
+                <sup>o</sup>
+                <div className="weather">{weather.weather.weather[0].main}</div>
               </div>
             </div>
             {/* My Components : */}
@@ -136,6 +142,7 @@ function Weather() {
             <Clouds weatherClouds={weather.weather.clouds} />
             <Wind weatherWind={weather.weather.wind} />
             <Dt weatherDt={weather.weather.dt} />
+            <Sys weatherSys={weather.weather.sys} />
           </div>
         ) : null}
         {/* *** */}

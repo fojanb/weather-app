@@ -99,6 +99,13 @@ main {
   text-align: center;
   box-shadow: 3px 6px rgba(0, 0, 0, 0.2);
 }
+.temp > sup {
+  font-size: 20px;
+  padding: 5px;
+}
+.temp > sub {
+  padding: 10px;
+}
 .weather-box .weather {
   color: white;
   font-size: 15px;

@@ -131,7 +131,7 @@ function Weather() {
               <div className="temp">
                 {kelvinToCelsius()}
                 <sup>o</sup><span>C</span>
-                <sub className="weather">{weather.weather.weather[0].main}</sub>
+                <div className="weather">{weather.weather.weather[0].main}</div>
               </div>
             </div>
             {/* My Components : */}

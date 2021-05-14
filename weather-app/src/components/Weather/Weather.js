@@ -40,13 +40,18 @@ function Weather() {
 
     // console.log(form.city);
   };
-  const celsiusToFahrenheit = () => {
-    setDegree("F");
+  const toggleDegree = () => {
     let kelvin = weather.weather.main.temp;
     let celsius = Math.floor(kelvin - 273.15);
-    const Fhr = document.querySelector(".degree");
-    Fhr.innerHTML = Math.round(celsius * 1.8 + 32);
-   
+    if (degree == "F") {
+      setDegree("C");
+      const Cel = document.querySelector(".degree");
+      Cel.innerHTML = celsius;
+    } else if (degree == "C") {
+      setDegree("F");
+      const Fhr = document.querySelector(".degree");
+      Fhr.innerHTML = Math.round(celsius * 1.8 + 32);
+    }
   };
   // ***********************************************************
   // ***************none event handlers functions***************
@@ -134,9 +139,9 @@ function Weather() {
             </div>
             <div className="weather-box">
               <div className="temp">
-                <span className = "degree">{kelvinToCelsius()}</span>
+                <span className="degree">{kelvinToCelsius()}</span>
                 <sup>o</sup>
-                <button onClick={celsiusToFahrenheit}>{degree}</button>
+                <button onClick={toggleDegree}>{degree}</button>
                 <div className="weather">{weather.weather.weather[0].main}</div>
               </div>
             </div>

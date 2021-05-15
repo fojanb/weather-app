@@ -166,6 +166,8 @@ function Weather() {
                 </div>
               </div>
             </div>
+            <div className ="details">hi</div>
+
             {/* My Components : */}
             <div className="myComponents">
               <Main

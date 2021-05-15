@@ -6,13 +6,18 @@ import Dt from "./../Dt/Dt";
 import Sys from "./../Sys/Sys";
 
 function Weather() {
-  const api = {
+  const api1 = {
     key: "4b3e61d509a14cd79c90d406e79d5d1a",
+    baseURL: "https://api.openweathermap.org/data/2.5/",
+  };
+  const api2 = {
+    key: "0281266202fa5f669d3041e0588e1367",
     baseURL: "https://api.openweathermap.org/data/2.5/",
   };
   // *************************<States>*************************
   const [form, setForm] = useState({ city: "" });
-  const [weather, setWeather] = useState([]); //Array of objects(json) or JSON array
+  const [weather, setWeather] = useState([]); //(Current Weather Data)Array of objects(json) or JSON array
+  const [forecast, setForecast] = useState([]); //7 Days Forecast Data
   const [degree, setDegree] = useState("C"); // Default degree is Celsius.
   // **********************************************************
   // *********************Event handlers***********************
@@ -23,8 +28,8 @@ function Weather() {
       alert("Please insert valid data");
     } else {
       const data = await fetch(
-        // API Call :
-        `${api.baseURL}weather?q=${form.city}&appid=${api.key}`
+        // First API Call (City's Current Weather) :
+        `${api1.baseURL}weather?q=${form.city}&appid=${api1.key}`
       )
         .then((res) => res.json())
         .then((data) => data);
@@ -32,8 +37,19 @@ function Weather() {
       setWeather({ weather: data });
       // now All data goes to 'weather' so far.
       setForm({ city: "" });
+
+      const fdata = await fetch(
+        // API Call (City's 7 days Forcast):
+        `${api2.baseURL}onecall?lat=${weather.weather.coord.lat}&lon=${weather.weather.coord.lon}&appid=${api2.key}`
+      )
+        .then((res) => res.json())
+        .then((fdata) => fdata);
+      console.log(fdata);
+      setForecast({ forecast: fdata });
     }
   };
+  // -----End of API fetching and also event's handler for serach button-----
+
   const inputHandler = (e) => {
     let value = e.target.value;
     setForm({ city: value });
@@ -130,7 +146,10 @@ function Weather() {
             <div className="circleContainer">
               <div className="location-box">
                 <div className="location">
-                  <img alt="location" src="https://img.icons8.com/fluent-systems-filled/48/ffffff/worldwide-location.png" />
+                  <img
+                    alt="location"
+                    src="https://img.icons8.com/fluent-systems-filled/48/ffffff/worldwide-location.png"
+                  />
                   {weather.weather.name}, {weather.weather.sys.country}
                 </div>
                 <div className="date">

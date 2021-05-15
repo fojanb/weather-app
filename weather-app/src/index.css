@@ -68,18 +68,29 @@ main {
 }
 
 .location-box .location {
+  display:flex;
+  flex-direction: row;
   color: white;
   font-weight: 700;
-  font-size: 32px;
+  font-size: 30px;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
+  text-shadow: 1px 1px rgba(50, 50, 70, 0.5);
 }
-.location-box .dateAndLocalTime {
+.location > img {
+  margin: 0px 10px;
+  width:30px;
+  height: 30px;
+  
+}
+.location-box .date {
+  padding-top: 10px;
   color: white;
-  font-weight: 300;
+  font-weight: bold;
   font-size: 15px;
   text-align: center;
-  text-shadow: 2px 2px rgba(50, 50, 70, 0.5);
+  text-shadow: 1px 1px rgba(50, 50, 70, 0.5);
   font-style: italic;
 }
 
@@ -89,15 +100,15 @@ main {
 .weather-box .temp {
   position: relative;
   display: inline-block;
-  margin: 30px auto;
+  margin-top: 10px;
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: 16px;
-  padding: 15px 25px;
+  padding: 11px 25px;
   color: white;
   font-size: 40px;
   font-weight: 900;
   text-align: center;
-  box-shadow: 3px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .temp > sup {
   font-size: 20px;
@@ -111,6 +122,7 @@ main {
   text-align: center;
   margin: auto;
   background-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   color: white;
   font-weight: 900;
 
@@ -120,6 +132,22 @@ main {
   color: rgb(163, 163, 163);
   cursor: pointer;
   
+}
+.circleContainer{
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  margin: 0 auto;
+  margin-top: -50px;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: 0.4s ease-out;
+
 }
 
 .weather-box .weather {
@@ -135,38 +163,4 @@ main {
   font-weight: 900;
   text-align: center;
 }
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  10% {
-    opacity: 0.1;
-  }
-  20% {
-    opacity: 0.2;
-  }
-  30% {
-    opacity: 0.3;
-  }
-  40% {
-    opacity: 0.4;
-  }
-  50% {
-    opacity: 0.5;
-  }
-  60% {
-    opacity: 0.6;
-  }
-  70% {
-    opacity: 0.7;
-  }
-  80% {
-    opacity: 0.8;
-  }
-  90% {
-    opacity: 0.9;
-  }
-  100% {
-    opacity: 1;
-  }
-}
+

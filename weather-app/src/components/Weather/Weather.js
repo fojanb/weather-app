@@ -43,11 +43,11 @@ function Weather() {
   const toggleDegree = () => {
     let kelvin = weather.weather.main.temp;
     let celsius = Math.floor(kelvin - 273.15);
-    if (degree == "F") {
+    if (degree === "F") {
       setDegree("C");
       const Cel = document.querySelector(".degree");
       Cel.innerHTML = celsius;
-    } else if (degree == "C") {
+    } else if (degree === "C") {
       setDegree("F");
       const Fhr = document.querySelector(".degree");
       Fhr.innerHTML = Math.round(celsius * 1.8 + 32);
@@ -58,18 +58,18 @@ function Weather() {
   let d = new Date();
   const dateBuilder = (d) => {
     let months = [
-      "January",
-      "February",
-      "March",
-      "April",
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
       "May",
-      "June",
-      "July",
-      "August",
-      "September",
-      "October",
-      "November",
-      "December",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec",
     ];
     let days = [
       "Sunday",
@@ -115,7 +115,6 @@ function Weather() {
             name="city"
             value={form.city}
             autoComplete="off"
-            onInvalid="alert('Invalid city name!');"
             required
           ></input>
           <button type="reset" onClick={weatherData} className="search-button">
@@ -128,21 +127,26 @@ function Weather() {
         {/* *** */}
         {weather.weather !== undefined ? (
           <div className="display">
-            <div className="location-box">
-              <div className="location">
-                {weather.weather.name}, {weather.weather.sys.country}
+            <div className="circleContainer">
+              <div className="location-box">
+                <div className="location">
+                <img src="https://img.icons8.com/fluent-systems-filled/48/ffffff/worldwide-location.png"/>
+                  {weather.weather.name}, {weather.weather.sys.country}
+                </div>
+                <div className="date">
+                  <div>{dateBuilder(d)}</div>
+                  {/* OR use this :<div>{new Date().toLocaleDateString()}</div> */}
+                </div>
               </div>
-              <div className="dateAndLocalTime">
-                <div>{dateBuilder(d)}</div>
-                {/* OR use this :<div>{new Date().toLocaleDateString()}</div> */}
-              </div>
-            </div>
-            <div className="weather-box">
-              <div className="temp">
-                <span className="degree">{kelvinToCelsius()}</span>
-                <sup>o</sup>
-                <button onClick={toggleDegree}>{degree}</button>
-                <div className="weather">{weather.weather.weather[0].main}</div>
+              <div className="weather-box">
+                <div className="temp">
+                  <span className="degree">{kelvinToCelsius()}</span>
+                  <sup>o</sup>
+                  <button onClick={toggleDegree}>{degree}</button>
+                  <div className="weather">
+                    {weather.weather.weather[0].main}
+                  </div>
+                </div>
               </div>
             </div>
             {/* My Components : */}

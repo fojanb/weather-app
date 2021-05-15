@@ -130,7 +130,7 @@ function Weather() {
             <div className="circleContainer">
               <div className="location-box">
                 <div className="location">
-                <img src="https://img.icons8.com/fluent-systems-filled/48/ffffff/worldwide-location.png"/>
+                  <img src="https://img.icons8.com/fluent-systems-filled/48/ffffff/worldwide-location.png" />
                   {weather.weather.name}, {weather.weather.sys.country}
                 </div>
                 <div className="date">
@@ -150,14 +150,16 @@ function Weather() {
               </div>
             </div>
             {/* My Components : */}
-            <Main
-              weatherMain={weather.weather.main}
-              convertKtoC={kelvinToCelsius}
-            />
-            <Clouds weatherClouds={weather.weather.clouds} />
-            <Wind weatherWind={weather.weather.wind} />
-            <Dt weatherDt={weather.weather.dt} />
-            <Sys weatherSys={weather.weather.sys} />
+            <div className="myComponents">
+              <Main
+                weatherMain={weather.weather.main}
+                convertKtoC={kelvinToCelsius}
+              />
+              <Clouds weatherClouds={weather.weather.clouds} />
+              <Wind weatherWind={weather.weather.wind} />
+              <Dt weatherDt={weather.weather.dt} />
+              <Sys weatherSys={weather.weather.sys} />
+            </div>
           </div>
         ) : null}
         {/* *** */}

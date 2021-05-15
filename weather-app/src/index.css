@@ -68,7 +68,7 @@ main {
 }
 
 .location-box .location {
-  display:flex;
+  display: flex;
   flex-direction: row;
   color: white;
   font-weight: 700;
@@ -80,9 +80,8 @@ main {
 }
 .location > img {
   margin: 0px 10px;
-  width:30px;
+  width: 30px;
   height: 30px;
-  
 }
 .location-box .date {
   padding-top: 10px;
@@ -115,7 +114,7 @@ main {
   padding: 5px;
 }
 .temp > button {
-  border:none;
+  border: none;
   width: 20px;
   height: 20px;
   border-radius: 5px;
@@ -125,15 +124,13 @@ main {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   color: white;
   font-weight: 900;
-
 }
-.temp > button:hover{
+.temp > button:hover {
   background-color: rgb(231, 227, 227);
   color: rgb(163, 163, 163);
   cursor: pointer;
-  
 }
-.circleContainer{
+.circleContainer {
   display: flex;
   flex-direction: column;
   width: 320px;
@@ -147,9 +144,7 @@ main {
   background-color: rgba(255, 255, 255, 0.3);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   transition: 0.4s ease-out;
-
 }
-
 .weather-box .weather {
   color: white;
   font-size: 15px;
@@ -163,4 +158,3 @@ main {
   font-weight: 900;
   text-align: center;
 }
-

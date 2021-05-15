@@ -17,7 +17,7 @@ function Weather() {
   // *************************<States>*************************
   const [form, setForm] = useState({ city: "" });
   const [weather, setWeather] = useState([]); //(Current Weather Data)Array of objects(json) or JSON array
-  const [forecast, setForecast] = useState([]); //7 Days Forecast Data
+  const [forecast, setForecast] = useState([]); //16 Days Forecast Data
   const [degree, setDegree] = useState("C"); // Default degree is Celsius.
   // **********************************************************
   // *********************Event handlers***********************
@@ -28,7 +28,7 @@ function Weather() {
       alert("Please insert valid data");
     } else {
       const data = await fetch(
-        // First API Call (City's Current Weather) :
+        // First API Call (data = City's Current Weather) :
         `${api1.baseURL}weather?q=${form.city}&appid=${api1.key}`
       )
         .then((res) => res.json())
@@ -39,17 +39,15 @@ function Weather() {
       setForm({ city: "" });
 
       const fdata = await fetch(
-        // API Call (City's 7 days Forcast):
-        `${api2.baseURL}onecall?lat=${weather.weather.coord.lat}&lon=${weather.weather.coord.lon}&appid=${api2.key}`
+        // API Call (fdata = City's 7 days Forcast):
+        `${api2.baseURL}onecall?lat=${weather.weather.coord.lat}&lon=${weather.weather.coord.lat}&appid=${api2.key}`
       )
         .then((res) => res.json())
         .then((fdata) => fdata);
-      console.log(fdata);
-      setForecast({ forecast: fdata });
+      // console.log(fdata);
+      setForecast({forecast : fdata});
     }
   };
-  // -----End of API fetching and also event's handler for serach button-----
-
   const inputHandler = (e) => {
     let value = e.target.value;
     setForm({ city: value });

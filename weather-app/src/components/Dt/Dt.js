@@ -13,9 +13,7 @@ const Dt = (props) => {
   };
   return (
     <div className="weatherDt-box">
-      <div className="dt">
-        Updated as of {convertTimestamptoTime(props)}
-      </div>
+      <div className="dt">Updated as of {convertTimestamptoTime(props)}</div>
     </div>
   );
 };

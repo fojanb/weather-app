@@ -130,7 +130,7 @@ function Weather() {
             <div className="circleContainer">
               <div className="location-box">
                 <div className="location">
-                  <img src="https://img.icons8.com/fluent-systems-filled/48/ffffff/worldwide-location.png" />
+                  <img alt="location" src="https://img.icons8.com/fluent-systems-filled/48/ffffff/worldwide-location.png" />
                   {weather.weather.name}, {weather.weather.sys.country}
                 </div>
                 <div className="date">

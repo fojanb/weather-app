@@ -37,10 +37,11 @@ function Weather() {
       setWeather({ weather: data });
       // now All data goes to 'weather' so far.
       setForm({ city: "" }); //Form has been reset !
+      // console.log(data.coord.lat);
 
       const fdata = await fetch(
         // Second API Call (fdata = City's 7 days Forcast):
-        `${api2.baseURL}onecall?lat=${weather.weather.coord.lat}&lon=${weather.weather.coord.lon}&appid=${api2.key}`
+        `${api2.baseURL}onecall?lat=${data.coord.lat}&lon=${data.coord.lon}&appid=${api2.key}`
       )
         .then((res) => res.json())
         .then((fdata) => fdata);
@@ -166,7 +167,7 @@ function Weather() {
                 </div>
               </div>
             </div>
-            <div className ="details">hi</div>
+            <div className="details">hi</div>
 
             {/* My Components : */}
             <div className="myComponents">

@@ -36,7 +36,7 @@ function Weather() {
       // console.log(data);
       setWeather({ weather: data });
       // now All data goes to 'weather' so far.
-      setForm({ city: "" });
+      setForm({ city: "" }); //Form has been reset !
 
       const fdata = await fetch(
         // API Call (fdata = City's 7 days Forcast):
@@ -45,7 +45,7 @@ function Weather() {
         .then((res) => res.json())
         .then((fdata) => fdata);
       // console.log(fdata);
-      setForecast({forecast : fdata});
+      setForecast({ forecast : fdata});
     }
   };
   const inputHandler = (e) => {

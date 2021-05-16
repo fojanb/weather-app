@@ -39,7 +39,7 @@ function Weather() {
       setForm({ city: "" }); //Form has been reset !
 
       const fdata = await fetch(
-        // API Call (fdata = City's 7 days Forcast):
+        // Second API Call (fdata = City's 7 days Forcast):
         `${api2.baseURL}onecall?lat=${weather.weather.coord.lat}&lon=${weather.weather.coord.lon}&appid=${api2.key}`
       )
         .then((res) => res.json())

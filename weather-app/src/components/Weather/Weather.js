@@ -46,7 +46,7 @@ function Weather() {
         .then((res) => res.json())
         .then((fdata) => fdata);
       // console.log(fdata);
-      setForecast({ forecast : fdata});
+      setForecast({ forecast: fdata });
     }
   };
   const inputHandler = (e) => {
@@ -71,6 +71,7 @@ function Weather() {
   // ***********************************************************
   // ***************none event handlers functions***************
   let d = new Date();
+  let today = '';
   const dateBuilder = (d) => {
     let months = [
       "Jan",
@@ -99,6 +100,7 @@ function Weather() {
     let date = d.getDate();
     let month = months[d.getMonth()];
     let year = d.getFullYear();
+    today = day;
     return `${day} ${date} ${month} ${year} `;
   };
   // ------------------------------
@@ -167,7 +169,30 @@ function Weather() {
                 </div>
               </div>
             </div>
-            <div className="details">hi</div>
+            <div className="details">
+              <table>
+                <tr>
+                  <th>{today}</th>
+                  <th>Lastname</th>
+                  <th>Age</th>
+                </tr>
+                <tr>
+                  <td>Jill</td>
+                  <td>Smith</td>
+                  <td>50</td>
+                </tr>
+                <tr>
+                  <td>Eve</td>
+                  <td>Jackson</td>
+                  <td>94</td>
+                </tr>
+                <tr>
+                  <td>John</td>
+                  <td>Doe</td>
+                  <td>80</td>
+                </tr>
+              </table>
+            </div>
 
             {/* My Components : */}
             <div className="myComponents">

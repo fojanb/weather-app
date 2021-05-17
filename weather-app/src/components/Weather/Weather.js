@@ -188,7 +188,14 @@ function Weather() {
                     {today}
                     <span>Today</span>
                   </div>
-                  <div className="todayDetails">alscmasc</div>
+                  <div className="feelsLike">
+                    Feels Like {weather.weather.main.feels_like}
+                  </div>
+                  <div className="humidity">
+                    Humidity{" "}
+                    <img src="https://img.icons8.com/metro/15/ffffff/water.png" />
+                    {weather.weather.main.humidity}%
+                  </div>
                 </div>
                 <div className="nextDays">
                   <div>{nextDay[1]}</div>

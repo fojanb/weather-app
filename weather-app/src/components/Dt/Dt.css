@@ -1,9 +1,14 @@
 .weatherDt-box {
   text-align: center;
   font-family: "Montserrat", sans-serif;
+  display: grid;
+  grid-template-rows: repeat(1, 100px);
 }
 .weatherDt-box .dt {
-  display: grid;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
   margin: 30px auto;
   border-radius: 16px;
   padding: 15px 25px;
@@ -11,4 +16,9 @@
   font-size: 18px;
   font-weight: 200;
   text-align: center;
+  width:300px;
+}
+.dt > img {
+  width: 25px;
+  height: 25px;
 }

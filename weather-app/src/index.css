@@ -165,7 +165,7 @@ main {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
 }
 .details {
-  margin: 50px auto;
+  margin: 10px auto;
   text-align: center;
   /* background-color: rgba(255, 255, 255, 0.1);
   border-radius: 20px;
@@ -173,6 +173,7 @@ main {
   display: grid;
   width: 70%;
   grid-template-rows: repeat(7, 50px);
+  transition: 0.4s ease-out;
 }
 .details .today {
   display: flex;
@@ -200,6 +201,7 @@ main {
 .details .nextDays:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
+
 .today .todayDetails {
   font-display: flex;
   flex-direction: column;

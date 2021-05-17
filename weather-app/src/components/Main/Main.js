@@ -6,9 +6,9 @@ function Main(props) {
   return (
     <div className="weatherMain-box">
       <div className="main">
-        <div>
+        <div className="feelsLike">
           Feels Like {props.convertKtoC(props.weatherMain.feels_like)}
-          <sup>o</sup>
+          <sup>o</sup>C
         </div>
         <div className="humidity">
           <div>
@@ -21,12 +21,12 @@ function Main(props) {
         <div className="max-temp">
           <img src="https://img.icons8.com/ios-filled/30/ffffff/thermometer-up.png" />
           {props.convertKtoC(props.weatherMain.temp_max)}
-          <sup>o</sup>
+          <sup>o</sup>C
         </div>
         <div className="min-temp">
           <img src="https://img.icons8.com/ios-filled/30/ffffff/thermometer-down.png" />
           {props.convertKtoC(props.weatherMain.temp_min)}
-          <sup>o</sup>
+          <sup>o</sup>C
         </div>
       </div>
     </div>

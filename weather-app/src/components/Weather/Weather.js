@@ -234,7 +234,7 @@ function Weather() {
               </div>
             ) : null}
 
-            {/* My Components : */}
+            {/* My Components realted to api1 (weather) : */}
             <div className="myComponents">
               <Main
                 weatherMain={weather.weather.main}

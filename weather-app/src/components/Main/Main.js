@@ -6,10 +6,6 @@ function Main(props) {
   return (
     <div className="weatherMain-box">
       <div className="main">
-        <div className="feelsLike">
-          Feels Like {props.convertKtoC(props.weatherMain.feels_like)}
-          <sup>o</sup>C
-        </div>
         <div className="humidity">
           <div>
             Humidity{" "}

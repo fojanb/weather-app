@@ -114,6 +114,11 @@ function Weather() {
     let celsius = Math.floor(kelvin - 273.15);
     return celsius;
   };
+  const kToCForcasting = (props) => {
+    let kelvinForcast = props;
+    let celsiusForcast = Math.floor(kelvinForcast - 273.15);
+    return celsiusForcast;
+  };
   // ------------------------------
   return (
     // Dynamic CSS
@@ -174,6 +179,7 @@ function Weather() {
                 </div>
               </div>
             </div>
+            {/* Forcasting for 6 days from today :*/}
             {forecast.forecast !== undefined ? (
               <div className="details">
                 <div className="today">{today} Today</div>
@@ -181,7 +187,7 @@ function Weather() {
                   <div>{nextDay[1]}</div>
                   <div>{forecast.forecast.daily[0].weather[0].main}</div>
                   <div>
-                    {forecast.forecast.daily[0].temp.day}
+                    {kToCForcasting(forecast.forecast.daily[0].temp.day)}
                     <sup>o</sup>C
                   </div>
                 </div>
@@ -189,7 +195,7 @@ function Weather() {
                   <div>{nextDay[2]}</div>
                   <div>{forecast.forecast.daily[1].weather[0].main}</div>
                   <div>
-                    {forecast.forecast.daily[1].temp.day}
+                    {kToCForcasting(forecast.forecast.daily[1].temp.day)}
                     <sup>o</sup>C
                   </div>
                 </div>
@@ -197,7 +203,7 @@ function Weather() {
                   <div>{nextDay[3]}</div>
                   <div>{forecast.forecast.daily[2].weather[0].main}</div>
                   <div>
-                    {forecast.forecast.daily[2].temp.day}
+                    {kToCForcasting(forecast.forecast.daily[2].temp.day)}
                     <sup>o</sup>C
                   </div>
                 </div>
@@ -205,7 +211,7 @@ function Weather() {
                   <div>{nextDay[4]}</div>
                   <div>{forecast.forecast.daily[3].weather[0].main}</div>
                   <div>
-                    {forecast.forecast.daily[3].temp.day}
+                    {kToCForcasting(forecast.forecast.daily[3].temp.day)}
                     <sup>o</sup>C
                   </div>
                 </div>
@@ -213,7 +219,7 @@ function Weather() {
                   <div>{nextDay[5]}</div>
                   <div>{forecast.forecast.daily[4].weather[0].main}</div>
                   <div>
-                    {forecast.forecast.daily[4].temp.day}
+                    {kToCForcasting(forecast.forecast.daily[4].temp.day)}
                     <sup>o</sup>C
                   </div>
                 </div>
@@ -221,7 +227,7 @@ function Weather() {
                   <div>{nextDay[6]}</div>
                   <div>{forecast.forecast.daily[5].weather[0].main}</div>
                   <div>
-                    {forecast.forecast.daily[5].temp.day}
+                    {kToCForcasting(forecast.forecast.daily[5].temp.day)}
                     <sup>o</sup>C
                   </div>
                 </div>

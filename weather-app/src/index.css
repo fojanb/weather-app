@@ -181,9 +181,13 @@ main {
   justify-content: space-between;
   align-items: center;
   font-size: 22px;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
   padding: 10px;
   height: 50px;
+  background-color: rgba(255, 255, 255, 0.1);
+
 }
 .today div span {
   padding-left: 10px;
@@ -198,25 +202,19 @@ main {
   padding: 10px;
   height: 50px;
 }
-.details .nextDays:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-.today .todayDetails {
-  font-display: flex;
-  flex-direction: column;
-  background-color: brown;
-}
 .today .feelsLike{
   font-size: 16px;
-  border: 1px solid white;
+  border: 0.5px solid white;
   padding: 5px;
   font-weight: normal;
+  border-radius: 5px;
 }
 .today .humidity{
   font-size: 16px;
   font-weight: normal;
-  border: 1px solid white;
+  border: 0.5px solid white;
   padding: 5px;
+  border-radius: 5px;
+
 
 }

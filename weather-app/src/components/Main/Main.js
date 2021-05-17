@@ -10,13 +10,22 @@ function Main(props) {
           Feels Like {props.convertKtoC(props.weatherMain.feels_like)}
           <sup>o</sup>
         </div>
-        <div>Humidity {props.weatherMain.humidity}%</div>
-        <div>
-          Temp_max {props.convertKtoC(props.weatherMain.temp_max)}
+        <div className="humidity">
+          <div>
+            Humidity{" "}
+            <img src="https://img.icons8.com/metro/15/ffffff/water.png" />
+            {" "}
+            {props.weatherMain.humidity}%
+          </div>
+        </div>
+        <div className="max-temp">
+          <img src="https://img.icons8.com/ios-filled/30/ffffff/thermometer-up.png" />
+          {props.convertKtoC(props.weatherMain.temp_max)}
           <sup>o</sup>
         </div>
-        <div>
-          Temp_min {props.convertKtoC(props.weatherMain.temp_min)}
+        <div className="min-temp">
+          <img src="https://img.icons8.com/ios-filled/30/ffffff/thermometer-down.png" />
+          {props.convertKtoC(props.weatherMain.temp_min)}
           <sup>o</sup>
         </div>
       </div>

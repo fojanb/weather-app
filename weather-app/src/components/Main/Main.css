@@ -1,12 +1,10 @@
 .weatherMain-box {
   text-align: center;
   font-family: "Montserrat", sans-serif;
-  display: grid;
-  grid-template-rows: repeat(1, 300px);
 }
 .weatherMain-box .main {
-  display: flex;
-  flex-direction: column;
+  position: relative;
+  display: inline-block;
   margin: 30px auto;
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: 16px;
@@ -18,10 +16,8 @@
   box-shadow: 3px 6px rgba(0, 0, 0, 0.2);
   justify-content: space-evenly;
   align-items: center;
-  width: 500px;
 }
 /* .feelsLike{
   display: flex;
   border-bottom: 5px sloid white;
 } */
-

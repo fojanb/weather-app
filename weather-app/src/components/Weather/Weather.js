@@ -189,14 +189,17 @@ function Weather() {
                     <span>Today</span>
                   </div>
                   <div className="feelsLike">
-                    Feels Like {weather.weather.main.feels_like}
+                    Feels {weather.weather.main.feels_like}
                   </div>
-                  <div>
-                    <div className="humidity">
-                      Humidity{" "}
-                      <img src="https://img.icons8.com/metro/15/ffffff/water.png" />
-                      {weather.weather.main.humidity}%
-                    </div>
+                  <div className="humidity">
+                    Humid{" "}
+                    <img src="https://img.icons8.com/metro/15/ffffff/water.png" />
+                    {weather.weather.main.humidity}%
+                  </div>
+                  <div className="cloudiness">
+                    Cloudy{" "}
+                    <img src="https://img.icons8.com/fluent-systems-filled/22/ffffff/partly-cloudy-day.png" />{" "}
+                    {weather.weather.clouds.all}%
                   </div>
                 </div>
                 <div className="nextDays">

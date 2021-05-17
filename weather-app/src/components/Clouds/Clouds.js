@@ -5,7 +5,7 @@ const Clouds = (props) => {
     <div className="weatherClouds-box">
       <div className="clouds">
         Cloudiness {props.weatherClouds.all}%{" "}
-        <img src="https://img.icons8.com/ios-glyphs/30/ffffff/partly-cloudy-day--v1.png" />
+        <img src="https://img.icons8.com/ios-filled/22/ffffff/cloud.png" />
       </div>
     </div>
   );

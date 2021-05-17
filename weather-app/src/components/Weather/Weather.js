@@ -71,7 +71,8 @@ function Weather() {
   // ***********************************************************
   // ***************none event handlers functions***************
   let d = new Date();
-  let today = '';
+  let today = "";
+  let nextDay = [];
   const dateBuilder = (d) => {
     let months = [
       "Jan",
@@ -101,6 +102,10 @@ function Weather() {
     let month = months[d.getMonth()];
     let year = d.getFullYear();
     today = day;
+    for (let i = 1; i < 7; i++) {
+      nextDay[i] = days[d.getDay() + i];
+    }
+
     return `${day} ${date} ${month} ${year} `;
   };
   // ------------------------------
@@ -169,30 +174,59 @@ function Weather() {
                 </div>
               </div>
             </div>
-            <div className="details">
-              <table>
-                <tr>
-                  <th>{today}</th>
-                  <th>Lastname</th>
-                  <th>Age</th>
-                </tr>
-                <tr>
-                  <td>Jill</td>
-                  <td>Smith</td>
-                  <td>50</td>
-                </tr>
-                <tr>
-                  <td>Eve</td>
-                  <td>Jackson</td>
-                  <td>94</td>
-                </tr>
-                <tr>
-                  <td>John</td>
-                  <td>Doe</td>
-                  <td>80</td>
-                </tr>
-              </table>
-            </div>
+            {forecast.forecast !== undefined ? (
+              <div className="details">
+                <div className="today">{today} Today</div>
+                <div className="nextDays">
+                  <div>{nextDay[1]}</div>
+                  <div>{forecast.forecast.daily[0].weather[0].main}</div>
+                  <div>
+                    {forecast.forecast.daily[0].temp.day}
+                    <sup>o</sup>C
+                  </div>
+                </div>
+                <div className="nextDays">
+                  <div>{nextDay[2]}</div>
+                  <div>{forecast.forecast.daily[1].weather[0].main}</div>
+                  <div>
+                    {forecast.forecast.daily[1].temp.day}
+                    <sup>o</sup>C
+                  </div>
+                </div>
+                <div className="nextDays">
+                  <div>{nextDay[3]}</div>
+                  <div>{forecast.forecast.daily[2].weather[0].main}</div>
+                  <div>
+                    {forecast.forecast.daily[2].temp.day}
+                    <sup>o</sup>C
+                  </div>
+                </div>
+                <div className="nextDays">
+                  <div>{nextDay[4]}</div>
+                  <div>{forecast.forecast.daily[3].weather[0].main}</div>
+                  <div>
+                    {forecast.forecast.daily[3].temp.day}
+                    <sup>o</sup>C
+                  </div>
+                </div>
+                <div className="nextDays">
+                  <div>{nextDay[5]}</div>
+                  <div>{forecast.forecast.daily[4].weather[0].main}</div>
+                  <div>
+                    {forecast.forecast.daily[4].temp.day}
+                    <sup>o</sup>C
+                  </div>
+                </div>
+                <div className="nextDays">
+                  <div>{nextDay[6]}</div>
+                  <div>{forecast.forecast.daily[5].weather[0].main}</div>
+                  <div>
+                    {forecast.forecast.daily[5].temp.day}
+                    <sup>o</sup>C
+                  </div>
+                </div>
+              </div>
+            ) : null}
 
             {/* My Components : */}
             <div className="myComponents">

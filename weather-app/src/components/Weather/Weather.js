@@ -179,10 +179,13 @@ function Weather() {
                 </div>
               </div>
             </div>
-            {/* Forcasting for 6 days from today :*/}
+            {/* Forcasting for 6 days starting from tomorrow(nextDay) :*/}
             {forecast.forecast !== undefined ? (
               <div className="details">
-                <div className="today">{today} Today</div>
+                <div className="today">
+                  <div>{today}<span>Today</span></div>
+                  <div className="todayDetails">alscmasc</div>
+                </div>
                 <div className="nextDays">
                   <div>{nextDay[1]}</div>
                   <div>{forecast.forecast.daily[0].weather[0].main}</div>

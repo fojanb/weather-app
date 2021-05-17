@@ -165,13 +165,14 @@ main {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
 }
 .details {
-  margin-top: 50px;
+  margin: 50px auto;
+  text-align: center;
   /* background-color: rgba(255, 255, 255, 0.1);
   border-radius: 20px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1); */
   display: grid;
+  width: 70%;
   grid-template-rows: repeat(7, 50px);
-
 }
 .details .today {
   display: flex;
@@ -182,7 +183,10 @@ main {
   border-bottom: 1px solid white;
   padding: 10px;
   height: 50px;
-  
+}
+.today div span {
+  padding-left: 10px;
+  font-size: 10px;
 }
 .details .nextDays {
   display: flex;
@@ -193,6 +197,11 @@ main {
   padding: 10px;
   height: 50px;
 }
-
-
-
+.details .nextDays:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.today .todayDetails {
+  font-display: flex;
+  flex-direction: column;
+  background-color: brown;
+}

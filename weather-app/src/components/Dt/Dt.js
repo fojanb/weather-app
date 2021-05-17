@@ -7,7 +7,6 @@ const Dt = (props) => {
     // then create a new Date object
     let dateObj = new Date(unixTimestamp * 1000);
     let utcString = dateObj.toUTCString();
-
     let time = utcString.slice(-11, -4);
     return time;
   };

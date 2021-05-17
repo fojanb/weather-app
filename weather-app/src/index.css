@@ -207,3 +207,16 @@ main {
   flex-direction: column;
   background-color: brown;
 }
+.today .feelsLike{
+  font-size: 16px;
+  border: 1px solid white;
+  padding: 5px;
+  font-weight: normal;
+}
+.today .humidity{
+  font-size: 16px;
+  font-weight: normal;
+  border: 1px solid white;
+  padding: 5px;
+
+}

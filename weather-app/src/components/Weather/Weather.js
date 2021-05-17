@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Main from "./../Main/Main";
-import Clouds from "./../Clouds/Clouds";
 import Wind from "./../Wind/Wind";
 import Dt from "./../Dt/Dt";
 import Sys from "./../Sys/Sys";
@@ -259,7 +258,6 @@ function Weather() {
                 weatherMain={weather.weather.main}
                 convertKtoC={kelvinToCelsius}
               />
-              <Clouds weatherClouds={weather.weather.clouds} />
               <Wind weatherWind={weather.weather.wind} />
               <Sys weatherSys={weather.weather.sys} />
             </div>

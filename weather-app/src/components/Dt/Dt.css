@@ -4,7 +4,6 @@
 }
 .weatherDt-box .dt {
   display: grid;
-  grid-template-columns: repeat(, 150px);
   margin: 30px auto;
   border-radius: 16px;
   padding: 15px 25px;

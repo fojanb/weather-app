@@ -119,6 +119,7 @@ function Weather() {
     let celsiusForcast = Math.floor(kelvinForcast - 273.15);
     return celsiusForcast;
   };
+  const weatherDescription = ["Rain", "Clouds" ,"Clear"];
   // ------------------------------
   return (
     // Dynamic CSS

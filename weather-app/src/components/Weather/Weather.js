@@ -6,12 +6,12 @@ import Sys from "./../Sys/Sys";
 
 function Weather() {
   const api1 = {
-    key: "4b3e61d509a14cd79c90d406e79d5d1a",
-    baseURL: "https://api.openweathermap.org/data/2.5/",
+    key: process.env.REACT_APP_API_KEY_1,
+    baseURL: process.env.REACT_APP_API_BASE_URL,
   };
   const api2 = {
-    key: "0281266202fa5f669d3041e0588e1367",
-    baseURL: "https://api.openweathermap.org/data/2.5/",
+    key: process.env.REACT_APP_API_KEY_2,
+    baseURL: process.env.REACT_APP_API_BASE_URL,
   };
   // *************************<States>*************************
   const [form, setForm] = useState({ city: "" });

@@ -95,13 +95,14 @@ function Weather() {
       "Thursday",
       "Friday",
       "Saturday",
+      "Sunday"
     ];
     let day = days[d.getDay()];
     let date = d.getDate();
     let month = months[d.getMonth()];
     let year = d.getFullYear();
     today = day;
-    for (let i = 1; i < 7; i++) {
+    for (let i = 1; i <= 7; i++) {
       nextDay[i] = days[d.getDay() + i];
     }
 

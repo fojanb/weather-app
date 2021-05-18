@@ -7,7 +7,7 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 .app {
-  background-image: url("./assets/cold.jpg");
+  background-image: url("./assets/earth.jpg");
   background-size: cover;
   background-position: bottom;
   transition: 1s ease-out;

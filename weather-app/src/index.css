@@ -7,7 +7,7 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 .app {
-  background-image: url("./assets/pexels-markus-spiske-116720.jpg");
+  background-image: url("./assets/s.jpg");
   background-size: cover;
   background-position: bottom;
   transition: 1s ease-out;
@@ -19,8 +19,8 @@ main {
   min-height: 100vh;
   background-image: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 0.2),
-    rgba(0, 0, 0, 0.75)
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0.5)
   );
   padding: 25px;
 }

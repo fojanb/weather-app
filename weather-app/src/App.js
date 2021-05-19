@@ -1,6 +1,9 @@
-import Weather from "../components/Weather/Weather";
+import Weather from "./components/Weather/Weather";
+require("dotenv").config();
 console.log(process.env.REACT_APP_API_KEY_1);
 function App() {
+ 
+
   return (
     <div className="App">
       <Weather />

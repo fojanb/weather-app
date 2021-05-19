@@ -3,8 +3,6 @@ import Main from "./../Main/Main";
 import Wind from "./../Wind/Wind";
 import Dt from "./../Dt/Dt";
 import Sys from "./../Sys/Sys";
-// require("dotenv").config();
-// console.log(process.env);
 
 function Weather() {
   const api1 = {

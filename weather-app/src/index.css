@@ -7,7 +7,7 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 .app {
-  background-image: url("./assets/s.jpg");
+  background-image: url("./assets/default.jpg");
   background-size: cover;
   background-position: bottom;
   transition: 1s ease-out;

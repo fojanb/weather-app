@@ -1,6 +1,17 @@
-# Getting Started with Create React App
+# weather-app
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Use .env o .env.local for your API KEY
+
+Insert your APIKEY into file *.env*
+
+```
+REACT_APP_API_KEY_1=%YOUR_API_KEY_1%
+REACT_APP_API_KEY_2=%YOUR_API_KEY_2%
+```
+
+or better create your file *.env.local* in the root folder of the project
 
 ## Available Scripts
 

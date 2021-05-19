@@ -3,6 +3,9 @@ import Main from "./../Main/Main";
 import Wind from "./../Wind/Wind";
 import Dt from "./../Dt/Dt";
 import Sys from "./../Sys/Sys";
+require("dotenv").config();
+console.log(process.env);
+
 
 function Weather() {
   const api1 = {
@@ -95,7 +98,7 @@ function Weather() {
       "Thursday",
       "Friday",
       "Saturday",
-      "Sunday"
+      "Sunday",
     ];
     let day = days[d.getDay()];
     let date = d.getDate();
@@ -119,7 +122,7 @@ function Weather() {
     let celsiusForcast = Math.floor(kelvinForcast - 273.15);
     return celsiusForcast;
   };
-  const weatherDescription = ["Rain", "Clouds" ,"Clear"];
+  const weatherDescription = ["Rain", "Clouds", "Clear"];
   // ------------------------------
   return (
     // Dynamic CSS
